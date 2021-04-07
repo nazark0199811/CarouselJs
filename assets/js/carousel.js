@@ -51,17 +51,16 @@ class Carousel{
 
         for (let i = 0, n = this.SLIDES_COUNT; i < n; i++) {
             const indicator = document.createElement('div');
+
             indicator.setAttribute('class', 'indicator');
             indicator.setAttribute('data-slide-to', `${i}`);
 
-            if (i === 0) {
-                indicator.classList.add('active');
-            }
-
+            i === 0 && indicator.classList.add('active');
             indicators.appendChild(indicator);
         }
 
         this.container.appendChild(indicators);
+
         this.indicatorsContainer = this.container.querySelector('.indicators');
         this.indicators = this.indicatorsContainer.querySelectorAll('.indicator');
     }
@@ -72,8 +71,6 @@ class Carousel{
         this.nextBtn.addEventListener('click', this.next.bind(this));
         this.indicatorsContainer.addEventListener('click', this.indicate.bind(this));
         document.addEventListener('keydown', this.pressKey.bind(this));  
-        this.container.addEventListener('mouseenter', this.pause.bind(this))
-        this.container.addEventListener('mouseleave', this.play.bind(this))
     }
 
      gotoSlide(n) {
@@ -141,9 +138,7 @@ class Carousel{
         this._initControls();
         this._initIndicators();
         this._initListeners();
-        if(this.isPlaying){
-            this.timerID = setInterval(() => this.nextSlide(), this.interval);
-        }
+        if(this.isPlaying) this.timerID = setInterval(() => this.nextSlide(), this.interval);
     }
 }
 
