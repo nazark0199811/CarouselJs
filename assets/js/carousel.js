@@ -17,13 +17,13 @@ class Carousel{
         this.swipeEndX = null;
     
         this.SLIDES_COUNT = this.slides.length;
-        this.SPACE = '';
+        this.SPACE = ' ';
         this.LEFT_ARROW = 'ArrowLeft';
         this.RIGHT_ARROW = 'ArrowRight';
-        this.FA_PAUSE = '<i class="far fa-pause-circle"></i>';
-        this.FA_PLAY = '<i class="far fa-play-circle"></i>';
-        this.FA_PREV = '<i class="fas fa-angle-left"></i>';
-        this.FA_NEXT = '<i class="fas fa-angle-right"></i>';
+        this.FA_PAUSE = '<i class="fas fa-pause"></i>';
+        this.FA_PLAY = '<i class="fas fa-play"></i>';
+        this.FA_PREV = '<i class="fas fa-angle-double-left"></i>';
+        this.FA_NEXT = '<i class="fas fa-angle-double-right"></i>';
     }
 
     _initControls(){
